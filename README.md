@@ -2,6 +2,8 @@
 A powerful web-based file conversion tool built using **Django** and **Tailwind CSS**.  
 FlexiFile allows users to effortlessly convert, merge, and compress files, making document management seamless and efficient.
 
+---
+
 # ✨ Features  
 - **Image to PDF** – Convert images to high-quality PDFs.  
 - **PDF to Image** – Extract pages from PDFs as images.  
@@ -31,9 +33,9 @@ cd flexifile
 
 ## 2️⃣ Create a virtual environment and install dependencies
 ```
-python -m venv env  
-source env/bin/activate  # For Linux/macOS  
-env\Scripts\activate  # For Windows  
+python -m venv .venv  
+source .venv/bin/activate  # For Linux/macOS  
+.venv\Scripts\activate  # For Windows  
 pip install -r requirements.txt  
 ```
 
@@ -75,7 +77,7 @@ http://127.0.0.1:8000/
 ---
 
 # 🙌 Thank You!
-Thank you for checking out **FlexiFile! 🎉**
+Thank you for checking out **FlexiFile! 🎉** <br>
 We hope this tool helps make file conversions easier for you. If you like this project, don't forget to **⭐ star the repository** and share it with others! 🚀
 
 
