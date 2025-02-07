@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+    PDF to Image
+{% endblock %}
+
+{% block content %}
+    <div class="flex justify-center items-center min-h-screen">
+        <div class="w-[750px] h-auto bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-lg flex flex-col items-center p-8">
+            <h1 class="font-bold text-3xl mt-10 text-gray-800 dark:text-white mb-6 text-center">Convert PDF to Images 📄 → 🖼️</h1>
+            <p class="text-base mt-2 text-gray-600 dark:text-gray-400 text-center mb-6">
+                Upload a PDF and extract <br> its pages as high-quality images in seconds.
+            </p>
+            
+            <form method="POST" enctype="multipart/form-data" action="{% url 'pdftoimg' %}" class="w-full flex flex-col items-center">
+                {% csrf_token %}
+                
+                <label for="pdf" class="mt-0 text-gray-800 dark:text-white text-lg font-medium mb-2">Select a PDF File:</label>
+                <input type="file" id="pdf" name="pdf" accept="application/pdf" required
+                    class="mt-2 p-3 w-4/5 border border-gray-300 rounded-md bg-white dark:bg-gray-700 dark:text-white mb-5">
+                
+                <button type="submit" 
+                    class="mt-2 mb-2 text-white bg-blue-700 hover:bg-blue-800 px-6 py-2 rounded-md focus:ring-4 focus:ring-blue-300 text-lg">
+                    Convert to Images
+                </button>
+            </form>
+
+            {% if image_filenames %}
+            <h2 class="font-bold text-xl text-gray-800 dark:text-white mt-6 text-center">Converted Images:</h2>
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                {% for image in image_filenames %}
+                    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md flex justify-center items-center">
+                        <!-- Correct image source path using MEDIA_URL -->
+                        <img src="/media/{{ image }}" alt="PDF Page" class="w-40 h-auto object-contain rounded-md">
+                        <a href="/media/{{ image }}" download 
+                           class="block text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded-md focus:ring-4 focus:ring-green-300 text-lg text-center">
+                           Download Page 📥
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        </div>
+    </div>
+{% endblock %}

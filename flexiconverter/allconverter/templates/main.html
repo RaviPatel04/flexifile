@@ -1,0 +1,256 @@
+{% extends "base.html" %}
+{% block title %}
+Main
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <div class="text-center mt-19 p-20 bg-gray-800 dark:bg-blue-900">
+        <h1 class="font-bold text-4xl text-white dark:text-white mb-7 mt-5">Welcome to FlexiFile – Your Ultimate File Conversion Tool 🗃️</h1>
+        <p class="text-lg text-gray-300 dark:text-gray-300 mb-8">Effortlessly convert, merge, compress, and manage your PDFs and images with FlexiFile. <br>Whether you're looking to convert images to PDFs, compress large files, or merge multiple PDFs, FlexiFile makes it easy, quick, and secure.</p>
+        <a href="#features" class="bg-white text-blue-700 font-medium text-lg px-8 py-3 rounded-lg hover:bg-gray-100">Explore Our Features →</a>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-screen-xl mx-auto text-center">
+            <h2 class="font-bold text-3xl text-gray-800 dark:text-white mb-6">Features You’ll Love</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-300 mb-10">With FlexiFile, you can easily manage all your file conversion and manipulation tasks in one place. Here are just some of the things you can do:</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Image to PDF -->
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center">
+                    <img src="{% static 'images/imagetopdf.png' %}" alt="Image to PDF" class="w-40 h-40 object-cover mb-4 rounded-md">
+                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-2">Image to PDF</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Convert any image to high-quality PDF with just a click. No need for extra software or confusing tools.</p>
+                    <a href="{% url "imgtopdf" %}" class="text-blue-400 hover:text-blue-500 font-medium text-lg">Start Converting →</a>
+                </div>
+
+                <!-- PDF to Image -->
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center">
+                    <img src="{% static 'images/pdftoimage.png' %}" alt="PDF to Image" class="w-40 h-40 object-cover mb-4 rounded-md">
+                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-2">PDF to Image</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Convert any PDF document into high-quality images. Quick and easy conversion with no hassle.</p>
+                    <a href="{% url "pdftoimg" %}" class="text-blue-400 hover:text-blue-500 font-medium text-lg">Start Converting →</a>
+                </div>
+
+                <!-- PDF to Word -->
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center">
+                    <img src="{% static 'images/pdftoword.png' %}" alt="PDF to Word" class="w-40 h-40 object-cover mb-4 rounded-md">
+                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-2">PDF to Word</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Convert your PDFs into editable Word documents. Fast, accurate, and hassle-free conversion.</p>
+                    <a href="{% url "pdftoword" %}" class="text-blue-400 hover:text-blue-500 font-medium text-lg">Start Converting →</a>
+                </div>
+                
+                <!-- Word to PDF -->
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center">
+                    <img src="{% static 'images/wordtopdf.png' %}" alt="Word to PDF" class="w-40 h-40 object-cover mb-4 rounded-md">
+                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-2">Word to PDF</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Convert your Word documents into high-quality PDFs instantly, with no extra software or complicated tools needed</p>
+                    <a href="{% url "wordtopdf" %}" class="text-blue-400 hover:text-blue-500 font-medium text-lg">Start Converting →</a>
+                </div>  
+
+                <!-- PDF Merger -->
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center">
+                    <img src="{% static 'images/pdfmerger.png' %}" alt="Word to PDF" class="w-40 h-40 object-cover mb-4 rounded-md">
+                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-2">PDF Merger</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Merge multiple PDFs into a single document without any hassle. Perfect for organizing files or combining reports.</p>
+                    <a href="{% url "pdfmerge" %}" class="text-blue-400 hover:text-blue-500 font-medium text-lg">Merge PDFs Now →</a>
+                </div>  
+
+                <!-- PDF Compression -->
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center">
+                    <img src="{% static 'images/pdfcomprassion.png' %}" alt="Word to PDF" class="w-40 h-40 object-cover mb-4 rounded-md">
+                    <h3 class="text-2xl font-semibold text-gray-800 dark:text-white mb-2">PDF Compression</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Reduce the size of your PDFs without compromising quality. Ideal for email attachments and sharing large files quickly.</p>
+                    <a href="{% url "pdfcompress" %}" class="text-blue-400 hover:text-blue-500 font-medium text-lg">Compress PDFs →</a>
+                </div>             
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-blue-700 dark:bg-blue-900 text-center">
+        <div class="max-w-screen-xl mx-auto text-center">
+            <h2 class="font-bold text-3xl text-gray-800 dark:text-white mb-6">About FlexiFile</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                FlexiFile is your all-in-one file conversion solution designed to handle PDF and image transformations effortlessly. 
+                Whether you need to convert images to PDFs, extract pages from PDFs, merge documents, or compress files, we provide a seamless and secure experience.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-screen-xl mx-auto text-center">
+            <h2 class="font-bold text-3xl text-gray-800 dark:text-white mb-6">Our Services</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                FlexiFile offers a variety of file conversion services, ensuring that you have the right tools at your fingertips. <br>
+                From quick PDF conversions to secure file compression, we've got you covered.
+            </p>
+
+            <!-- Centered List -->
+            <div class="mt-10 flex justify-center">
+                <ul class="text-lg text-gray-600 dark:text-gray-300 space-y-4 text-left">
+                    <li class="flex items-center gap-2">
+                        ✅ Secure File Processing
+                    </li>
+                    <li class="flex items-center gap-2">
+                        ✅ Free & Fast Conversions
+                    </li>
+                    <li class="flex items-center gap-2">
+                        ✅ No Registration Required
+                    </li>
+                    <li class="flex items-center gap-2">
+                        ✅ High-Quality Output
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-blue-700 dark:bg-blue-900">
+        <div class="max-w-screen-xl mx-auto px-6 lg:px-8">
+            <div class="mb-12 text-center">
+                <p class="text-base font-semibold uppercase tracking-wide text-blue-200">Contact</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Get in Touch</h2>
+                <p class="max-w-2xl mx-auto text-lg text-gray-300">Have any questions? Contact us and we’ll get back to you as soon as possible.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 items-center">
+                <!-- Contact Information -->
+                <div class="space-y-6 ml-10">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white bg-opacity-20 text-white">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                                <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium text-white">Our Address</h3>
+                            <p class="text-gray-300">123 FlexiFile Street, Tech City, USA</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white bg-opacity-20 text-white">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium text-white">Contact</h3>
+                            <p class="text-gray-300">Mobile: +1 (123) 456-7890</p>
+                            <p class="text-gray-300">Email: support@flexifile.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white bg-opacity-20 text-white">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium text-white">Working Hours</h3>
+                            <p class="text-gray-300">Monday - Friday: 09:00 - 17:00</p>
+                            <p class="text-gray-300">Saturday: 09:00 - 12:00</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Section -->
+                    <div class="mt-8">
+                        <h2 class="text-lg font-bold text-white">Follow Us</h2>
+                        <ul class="flex mt-4 space-x-4">
+                            <!-- Facebook -->
+                            <li class="bg-white bg-opacity-20 h-12 w-12 rounded-full flex items-center justify-center">
+                                <a href="#" class="text-blue-400">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M6.812 13.937H9.33v9.312c0 .414.335.75.75.75h4.007a.75.75 0 0 0 .75-.75v-9.312h2.387a.75.75 0 0 0 .744-.657l.498-4a.75.75 0 0 0-.744-.843h-2.885c.113-2.471-.435-3.202 1.172-3.202 1.088-.13 2.804.421 2.804-.75V.909a.75.75 0 0 0-.648-.743A26.926 26.926 0 0 0 15.071 0c-7.01 0-5.567 7.772-5.74 8.437H6.812a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75z"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <!-- LinkedIn -->
+                            <li class="bg-white bg-opacity-20 h-12 w-12 rounded-full flex items-center justify-center">
+                                <a href="#" class="text-blue-500">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M3 3h5v5H3V3zm0 8h5v8H3v-8zM9 11h5v1.5c.68-1.04 1.78-1.5 3.28-1.5c2.52 0 4.72 1.72 4.72 5v4.5h-5v-4c0-1.12-.46-1.5-1.12-1.5s-1.38.38-1.38 1.5v4H9v-8z"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <!-- Instagram -->
+                            <li class="bg-white bg-opacity-20 h-12 w-12 rounded-full flex items-center justify-center">
+                                <a href="#" class="text-pink-500">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2.163c3.21 0 3.584.012 4.85.07 1.366.06 2.633.332 3.608 1.308.975.975 1.247 2.242 1.308 3.608.058 1.266.07 1.64.07 4.85s-.012 3.584-.07 4.85c-.06 1.366-.332 2.633-1.308 3.608-.975.975-2.242 1.247-3.608 1.308-1.266.058-1.64.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.06-2.633-.332-3.608-1.308-.975-.975-1.247-2.242-1.308-3.608C2.175 15.584 2.163 15.21 2.163 12s.012-3.584.07-4.85c.06-1.366.332-2.633 1.308-3.608.975-.975 2.242-1.247 3.608-1.308C8.416 2.175 8.79 2.163 12 2.163z"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <!-- Hidden Popup for Success Message -->
+                <div id="successPopup" class="fixed bottom-10 left-1/2 transform -translate-x-1/2 max-w-md bg-blue-400 bg-opacity-50 justify-center items-center p-4 rounded-full hidden">
+                    <p class="text-white mt-2">Your message has been submitted successfully!!</p>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-lg backdrop-blur-md w-full max-w-lg mx-auto">
+                    <h3 class="text-2xl font-bold text-white mb-6">Send us a message</h3>
+                    <form method="POST" action="{% url 'contact' %}" class="space-y-4" id="contactForm">
+                        {% csrf_token %}
+                        <input type="text" name="name" placeholder="Your Name" required 
+                            class="w-full px-4 py-3 rounded-md bg-transparent border border-white text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white">
+                        <input type="email" name="email" placeholder="Your Email" required 
+                            class="w-full px-4 py-3 rounded-md bg-transparent border border-white text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white">
+                        <textarea name="message" placeholder="Your Message" rows="4" required 
+                            class="w-full px-4 py-3 rounded-md bg-transparent border border-white text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white"></textarea>
+                        <button type="submit" 
+                            class="w-full bg-white text-blue-700 font-medium px-6 py-3 rounded-lg hover:bg-gray-100">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- JavaScript for Popup -->
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        // Check if Django messages exist
+                        
+                        {% if messages %}
+                            // Show the success popup
+                            document.getElementById("successPopup").classList.remove("hidden");
+
+                            // Set timeout to automatically hide the popup after 10 seconds
+                            setTimeout(function() {
+                                document.getElementById("successPopup").classList.add("hidden");
+                            }, 3000); // 3000ms = 3 seconds
+                        {% endif %}
+                    });
+                </script>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="cta" class="py-16 bg-gray-50 dark:bg-gray-800 text-center">
+        <h2 class="font-bold text-3xl mb-6 text-white dark:text-white">Get Started with FlexiFile Today!</h2>
+        <p class="text-lg mb-8 text-gray-300 dark:text-gray-300">It’s never been easier to manage your files. Start using FlexiFile today to simplify your PDF and image conversions.</p>
+        <a href="#features" class="bg-white text-blue-700 font-medium px-8 py-3 rounded-lg hover:bg-gray-100 text-lg">Start Converting Now</a>
+    </section>
+
+    
+
+{% endblock %}
