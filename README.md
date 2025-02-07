@@ -28,7 +28,7 @@ FlexiFile allows users to effortlessly convert, merge, and compress files, makin
 ## 1️⃣ Clone the repository  
 ```
 git clone https://github.com/yourusername/flexifile.git
-cd flexifile 
+cd flexiconverter
 ```
 
 ## 2️⃣ Create a virtual environment and install dependencies
@@ -39,8 +39,9 @@ source .venv/bin/activate  # For Linux/macOS
 pip install -r requirements.txt  
 ```
 
-## 3️⃣ Apply database migrations
+## 3️⃣ Apply migrations
 ```
+python manage.py makemigrations
 python manage.py migrate  
 ```
 
