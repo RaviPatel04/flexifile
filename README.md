@@ -1,6 +1,6 @@
 # FlexiFile - Your Ultimate File Conversion Tool 🗃️  
 A powerful web-based file conversion tool built using **Django** and **Tailwind CSS**.  
-FlexiFile allows users to effortlessly convert, merge, and compress files, making document management seamless and efficient.
+FlexiFile allows users to effortlessly convert, merge, and compress files, making document management seamless and efficient. <br>
 Visit: https://flexifile.onrender.com/
 
 ---
